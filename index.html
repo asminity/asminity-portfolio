@@ -395,7 +395,183 @@
       </div>
     </section>
 
-    <div id="projects"></div>
+    <!-- ====================================================================
+         Projects Section
+         ==================================================================== -->
+    <section class="section-padding" id="projects">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+          <div>
+            <span class="section-tag">Featured Work</span>
+            <h2 class="section-title mb-2">Engineering &amp; AI Projects</h2>
+            <p class="text-muted mb-0">Practical applications spanning agentic workflows, computer vision, multimodal intelligence, and graph learning.</p>
+          </div>
+        </div>
+
+        <div class="row g-4" id="projects-grid">
+          
+          <!-- PROJECT 1: Lamit -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="gen-ai">
+            <div class="project-card">
+              <div class="project-visual visual-lamit">
+                <i class="bi bi-robot project-visual-watermark"></i>
+                <div class="diagram-badge">
+                  <i class="bi bi-diagram-2 text-primary"></i> StateGraph &bull; Tool Calling
+                </div>
+              </div>
+              <span class="project-category-tag">Agentic AI &bull; LLM</span>
+              <h3 class="project-title">Lamit — AI Agentic Assistant</h3>
+              <p class="project-description">
+                An AI assistant exploring stateful conversations, tool-enabled workflows, persistent chat history, and intelligent response generation. Emphasizes conversational state management and tool orchestration, with advanced memory and semantic caching under active exploration.
+              </p>
+              <div class="project-tech-chips">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">LangChain</span>
+                <span class="tech-badge">LangGraph</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">FastAPI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/asminity" target="_blank" rel="noopener noreferrer" class="btn-card-action primary">
+                  <i class="bi bi-github"></i> Repository
+                </a>
+                <a href="#contact" class="btn-card-action secondary">
+                  <i class="bi bi-info-circle"></i> Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: PenchEye -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="ai-ml">
+            <div class="project-card">
+              <div class="project-visual visual-pencheye">
+                <i class="bi bi-camera project-visual-watermark"></i>
+                <div class="diagram-badge">
+                  <i class="bi bi-bounding-box text-info"></i> YOLO &bull; MegaDescriptor
+                </div>
+              </div>
+              <span class="project-category-tag">Computer Vision &bull; Conservation</span>
+              <h3 class="project-title">PenchEye — Wildlife Identification</h3>
+              <p class="project-description">
+                A computer-vision project focused on identifying individual tigers from camera-trap imagery to support wildlife monitoring. Leverages deep feature embeddings and detection pipelines for conservation research.
+              </p>
+              <div class="project-tech-chips">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">YOLO</span>
+                <span class="tech-badge">MegaDescriptor</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">React / TS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/asminity/Pench_Eye" target="_blank" rel="noopener noreferrer" class="btn-card-action primary">
+                  <i class="bi bi-github"></i> Repository
+                </a>
+                <a href="https://github.com/asminity/Pench_Eye" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary">
+                  <i class="bi bi-box-arrow-up-right"></i> Codebase
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: ShikshaNetra -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="gen-ai">
+            <div class="project-card">
+              <div class="project-visual visual-shiksha">
+                <i class="bi bi-mic project-visual-watermark"></i>
+                <div class="diagram-badge">
+                  <i class="bi bi-soundwave text-primary"></i> Multimodal &bull; Structured Feedback
+                </div>
+              </div>
+              <span class="project-category-tag">Generative AI &bull; Education</span>
+              <h3 class="project-title">ShikshaNetra — Teaching Evaluation</h3>
+              <p class="project-description">
+                An AI-based system that analyzes classroom audio/video and transcripts to explore teaching feedback and generate structured, actionable pedagogical insights with persistent session history.
+              </p>
+              <div class="project-tech-chips">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Audio/Video Processing</span>
+                <span class="tech-badge">Gemini Model</span>
+                <span class="tech-badge">Structured JSON</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/asminity/ShikshaNetra" target="_blank" rel="noopener noreferrer" class="btn-card-action primary">
+                  <i class="bi bi-github"></i> Repository
+                </a>
+                <a href="https://github.com/asminity/ShikshaNetra" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary">
+                  <i class="bi bi-box-arrow-up-right"></i> Codebase
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: CogniCare -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="software">
+            <div class="project-card">
+              <div class="project-visual visual-cognicare">
+                <i class="bi bi-heart-pulse project-visual-watermark"></i>
+                <div class="diagram-badge">
+                  <i class="bi bi-database text-success"></i> Healthcare Decision-Support
+                </div>
+              </div>
+              <span class="project-category-tag">Backend &bull; Healthcare Platform</span>
+              <h3 class="project-title">CogniCare — Healthcare Platform</h3>
+              <p class="project-description">
+                A healthcare intelligence project focused on connecting information about patients, hospitals, treatments, insurance, and costs into a coherent decision-support experience (designed purely for informational exploration without clinical diagnosis claims).
+              </p>
+              <div class="project-tech-chips">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">SQLAlchemy</span>
+                <span class="tech-badge">Alembic</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/asminity" target="_blank" rel="noopener noreferrer" class="btn-card-action primary">
+                  <i class="bi bi-github"></i> Repository
+                </a>
+                <a href="#contact" class="btn-card-action secondary">
+                  <i class="bi bi-info-circle"></i> Info
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 5: BlockCH-ai -->
+          <div class="col-12 col-md-6 col-lg-4 project-item" data-category="ai-ml">
+            <div class="project-card">
+              <div class="project-visual visual-blockchai">
+                <i class="bi bi-shield-check project-visual-watermark"></i>
+                <div class="diagram-badge">
+                  <i class="bi bi-graph-up text-warning"></i> GraphSAGE &bull; Anomaly Scoring
+                </div>
+              </div>
+              <span class="project-category-tag">Graph ML &bull; SIH 2026 Context</span>
+              <h3 class="project-title">BlockCH-ai — Blockchain Risk Analysis</h3>
+              <p class="project-description">
+                An AI-driven blockchain analytics project exploring suspicious transaction detection using transaction patterns, graph relationships, and network-level signals in an academic/hackathon problem-solving context.
+              </p>
+              <div class="project-tech-chips">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">PyTorch</span>
+                <span class="tech-badge">GraphSAGE</span>
+                <span class="tech-badge">Network Features</span>
+                <span class="tech-badge">Risk Scoring</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/asminity" target="_blank" rel="noopener noreferrer" class="btn-card-action primary">
+                  <i class="bi bi-github"></i> Repository
+                </a>
+                <a href="#contact" class="btn-card-action secondary">
+                  <i class="bi bi-info-circle"></i> Info
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
     <div id="experience"></div>
     <div id="education"></div>
     <div id="contact"></div>
