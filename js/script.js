@@ -17,7 +17,7 @@ const PORTFOLIO_CONFIG = {
   },
   social: {
     github: "https://github.com/asminity",
-    linkedin: "#", // Placeholder: update with verified LinkedIn profile URL when available
+    linkedin: "#", // Placeholder: update when verified LinkedIn profile is available
     email: "asmit12yadav@gmail.com"
   },
   projectRepos: {
@@ -33,11 +33,38 @@ const PORTFOLIO_CONFIG = {
 // 2. DOM Initialization & Event Bindings
 // --------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
+  applyPortfolioConfig();
   initNavbarBehavior();
+  initScrollSpy();
+  initContactFormValidation();
   initDynamicYear();
   initBackToTop();
   logDeveloperGreeting();
 });
+
+/**
+ * Applies centralized config to DOM elements (emails, social links)
+ */
+function applyPortfolioConfig() {
+  const emailLink = document.getElementById("contact-email-link");
+  const emailDisplay = document.getElementById("contact-email-display");
+  const linkedinLink = document.getElementById("contact-linkedin-link");
+  const githubLink = document.getElementById("contact-github-link");
+
+  if (emailLink && PORTFOLIO_CONFIG.social.email) {
+    emailLink.href = `mailto:${PORTFOLIO_CONFIG.social.email}`;
+  }
+  if (emailDisplay && PORTFOLIO_CONFIG.social.email) {
+    emailDisplay.textContent = PORTFOLIO_CONFIG.social.email;
+  }
+  if (linkedinLink && PORTFOLIO_CONFIG.social.linkedin !== "#") {
+    linkedinLink.href = PORTFOLIO_CONFIG.social.linkedin;
+    linkedinLink.removeAttribute("title");
+  }
+  if (githubLink && PORTFOLIO_CONFIG.social.github) {
+    githubLink.href = PORTFOLIO_CONFIG.social.github;
+  }
+}
 
 /**
  * Handles navbar background transition and mobile menu auto-close
@@ -60,7 +87,6 @@ function initNavbarBehavior() {
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-        // Use Bootstrap Collapse API if available, or fall back to class toggle
         if (typeof bootstrap !== "undefined" && bootstrap.Collapse) {
           const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
           if (bsCollapse) {
@@ -73,6 +99,85 @@ function initNavbarBehavior() {
         }
       }
     });
+  });
+}
+
+/**
+ * Active navigation link tracking based on current viewport scroll position
+ */
+function initScrollSpy() {
+  const sections = document.querySelectorAll("header[id], section[id]");
+  const navLinks = document.querySelectorAll(".custom-navbar .nav-link");
+
+  if (!sections.length || !navLinks.length) return;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "-20% 0px -60% 0px",
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const activeId = entry.target.getAttribute("id");
+        navLinks.forEach(link => {
+          if (link.getAttribute("href") === `#${activeId}`) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+}
+
+/**
+ * Handles client-side contact form validation with accessible feedback
+ */
+function initContactFormValidation() {
+  const contactForm = document.getElementById("portfolio-contact-form");
+  const feedbackAlert = document.getElementById("form-feedback");
+
+  if (!contactForm) return;
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Check HTML5 validity
+    if (!contactForm.checkValidity()) {
+      contactForm.classList.add("was-validated");
+      if (feedbackAlert) feedbackAlert.style.display = "none";
+      return;
+    }
+
+    // Form is valid: show demo verification message
+    contactForm.classList.remove("was-validated");
+    if (feedbackAlert) {
+      feedbackAlert.style.display = "block";
+      feedbackAlert.focus();
+    }
+
+    // Read form values safely
+    const name = document.getElementById("form-name")?.value;
+    const email = document.getElementById("form-email")?.value;
+    const subject = document.getElementById("form-subject")?.value;
+
+    console.info(`[Demo Form Submission Validated]: Sender: ${name} (${email}), Subject: ${subject}`);
+    
+    // Reset form fields
+    contactForm.reset();
+
+    // Hide feedback message after 7 seconds
+    setTimeout(() => {
+      if (feedbackAlert) {
+        feedbackAlert.style.display = "none";
+      }
+    }, 7000);
   });
 }
 
