@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyPortfolioConfig();
   initNavbarBehavior();
   initScrollSpy();
+  initProjectFiltering();
   initContactFormValidation();
   initDynamicYear();
   initBackToTop();
@@ -133,6 +134,37 @@ function initScrollSpy() {
   }, observerOptions);
 
   sections.forEach(section => observer.observe(section));
+}
+
+/**
+ * Handles category-based project card filtering with smooth transitions
+ */
+function initProjectFiltering() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectItems = document.querySelectorAll(".project-item");
+
+  if (!filterButtons.length || !projectItems.length) return;
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Toggle active styling on buttons
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const selectedFilter = button.getAttribute("data-filter");
+
+      // Filter project cards based on data-category attribute
+      projectItems.forEach(item => {
+        const itemCategory = item.getAttribute("data-category");
+
+        if (selectedFilter === "all" || itemCategory === selectedFilter) {
+          item.classList.remove("filter-hide");
+        } else {
+          item.classList.add("filter-hide");
+        }
+      });
+    });
+  });
 }
 
 /**
