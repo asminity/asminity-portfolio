@@ -21,11 +21,11 @@ const PORTFOLIO_CONFIG = {
     email: "asmit12yadav@gmail.com"
   },
   projectRepos: {
-    lamit: "https://github.com/asminity", // Configurable link until dedicated repo path is set
+    lamit: "https://github.com/asminity/Lamit",
     penchEye: "https://github.com/asminity/Pench_Eye",
     shikshaNetra: "https://github.com/asminity/ShikshaNetra",
-    cogniCare: "https://github.com/asminity", // Configurable placeholder link
-    blockChAi: "https://github.com/asminity"  // Configurable placeholder link
+    cogniCare: "https://github.com/asminity/CogniCare",
+    blockChAi: "https://github.com/asminity/SIH-Prototype"
   }
 };
 

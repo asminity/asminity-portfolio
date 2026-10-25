@@ -12,7 +12,7 @@
 > **Department**: Computer Science and Engineering (Data Science & Analytics)  
 > **Expected Graduation**: 2028 | **CGPA**: 8.50 / 10  
 > **GitHub Profile**: [https://github.com/asminity](https://github.com/asminity)  
-> **Live Deployment**: *Pending GitHub Pages publish (configured in Phase 7)*
+> **Live Deployment**: [https://asminity.github.io/asminity-portfolio/](https://asminity.github.io/asminity-portfolio/)  
 
 ---
 
